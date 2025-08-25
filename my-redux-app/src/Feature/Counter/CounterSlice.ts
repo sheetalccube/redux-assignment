@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialState: { count: number } = { count: 6 };
 
-export const counterSlice = createSlice({
+export const CounterSlice = createSlice({
   // The name of the slice is "counter"
   name: "counter",
   //   initialState is the initial state of the slice
@@ -24,9 +24,9 @@ export const counterSlice = createSlice({
 });
 
 export const { increment, decrement, incrementByAmount, reset } =
-  counterSlice.actions;
+  CounterSlice.actions;
 
-export default counterSlice.reducer;
+export default CounterSlice.reducer;
 
 // create slice 2 cheeze return krta h action and reducer
 
