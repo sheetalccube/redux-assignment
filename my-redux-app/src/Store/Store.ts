@@ -1,6 +1,7 @@
 import { configureStore, type Middleware } from "@reduxjs/toolkit";
 import { CounterSlice } from "../Feature/Counter/CounterSlice";
 import { AuthSlice } from "../Feature/Auth/AuthSlice";
+import { usersSlice } from "../Feature/Users/UserSlice";
 
 const loggerMiddleware: Middleware = (store) => (next) => (action) => {
   console.log("Dispatching:", action);
@@ -15,6 +16,7 @@ export const store = configureStore({
   reducer: {
     counter: CounterSlice.reducer,
     auth: AuthSlice.reducer,
+    users: usersSlice.reducer, // add more reducers here
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(loggerMiddleware),
